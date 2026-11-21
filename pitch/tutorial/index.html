@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>단계별 시연 튜토리얼</title>
+<link rel="stylesheet" href="tutorial.css">
+</head>
+<body>
+<!-- 1차: 요청 접수 당일 정리 · 되묻기 -->
+<main class="stage" data-stage="1">
+  <header class="top"><span class="badge s1">1차</span><b>요청 접수</b><span class="sub">Jira 연동 · 가상 데이터</span></header>
+  <div class="g1">
+    <section class="card" id="t1-ticket">
+      <div class="lbl">MKT-1206 · 마케터 C</div>
+      <div class="quote">VIP 고객 요즘 구매 동향 좀 봐주세요.</div>
+      <div id="t1-verdict" class="verdict"><span class="pill amber">조건부 가능</span><span class="pill gray">예상 2시간</span><span class="pill blue">접수 당일 회신</span></div>
+    </section>
+    <section class="card" id="t1-draft">
+      <div class="lbl">🧑‍💻 주니어 BA 초안</div>
+      <div class="row"><b>추정 요구사항</b>VIP 등급 회원 월별 구매</div>
+      <div class="row"><b>데이터 확인</b>등급 이력 테이블 사용 · 마스터 등급 138명 최신 아님</div>
+    </section>
+    <section class="card" id="t1-ask">
+      <div class="lbl">❓ 되묻기 (기본안 첨부)</div>
+      <div class="q">VIP 기준은 구매 당시 등급? 현재 등급? <em>기본안: 구매 당시</em></div>
+      <div class="q">동향 = 월별 고객 수 · 매출 · 객단가? <em>기본안: 예</em></div>
+    </section>
+    <section class="card" id="t1-check">
+      <div class="lbl">🤖 검수 조건 자동 검사</div>
+      <div class="ck ok">취소 · 반품 주문 제외</div>
+      <div class="ck ok">순매출 범위 (B2B 포함 · 소모품 제외)</div>
+      <div class="ck ok">조회 기간 파라미터 적용</div>
+    </section>
+    <section class="card" id="t1-review">
+      <div class="lbl">🔍 시니어 BA 검수</div>
+      <div class="btns"><span class="btn pri">승인 · Excel 발송</span><span class="btn">지적 → 검수 조건 등록</span></div>
+    </section>
+  </div>
+</main>
+
+<!-- 2차: 프로모션 효과 판정 -->
+<main class="stage" data-stage="2">
+  <header class="top"><span class="badge s2">2차</span><b>프로모션 효과 판정</b><span class="sub">대조군 대비 · 가상 데이터</span></header>
+  <div class="g2">
+    <section class="card" id="t2-list">
+      <div class="lbl">캠페인 목록 · 사전 등록 지표</div>
+      <div class="cl"><span>김치냉장고 교차 쿠폰</span><span class="m">교차 구매 전환율 28일</span><span class="pill green">효과 확인</span></div>
+      <div class="cl" id="t2-bf-row"><span>블프 냉장고 10% 추가 할인</span><span class="m">냉장고 구매 전환율 28일</span><span class="pill red">확대 비권장</span></div>
+      <div class="cl"><span>상세페이지 리뷰 영상</span><span class="m">장바구니 담기율</span><span class="pill violet">판단 보류</span></div>
+    </section>
+    <section class="card" id="t2-chart">
+      <div class="lbl">대조군 대비 효과 (95% 신뢰구간)</div>
+      <div class="ci"><span>교차 쿠폰</span><div class="ax"><i class="zero"></i><i class="bar g" style="left:34.3%;width:61.4%"></i><i class="pt g" style="left:63%"></i></div><b>+34.1%</b></div>
+      <div class="ci"><span>블프 할인</span><div class="ax"><i class="zero"></i><i class="bar r" style="left:1.4%;width:32.9%"></i><i class="pt r" style="left:17.1%"></i></div><b>+2.0%</b></div>
+      <div class="ci"><span>리뷰 영상</span><div class="ax"><i class="zero"></i><i class="bar v" style="left:12.9%;width:14.3%"></i><i class="pt v" style="left:20%"></i></div><b>+4.0%</b></div>
+      <div class="note">막대가 0 을 걸치면 우연과 구분 불가</div>
+    </section>
+    <section class="card" id="t2-detail">
+      <div class="lbl">판정 상세 · 블프 냉장고 10% 추가 할인</div>
+      <div class="kv"><span>사전 기대치</span><b>+5%</b></div>
+      <div class="kv"><span>행사 7일</span><b class="up">+40.8%</b></div>
+      <div class="kv"><span>28일 누적</span><b>+2.0% · 유의하지 않음</b></div>
+      <div class="concl">구매 시점 이동 · 순증 미미 → 확대 비권장</div>
+    </section>
+    <section class="card" id="t2-next">
+      <div class="lbl">💡 BA 선제 제안</div>
+      <div class="row"><b>주방가전 구매자 정수기 렌탈</b>대조군 10% 설계 · 주 지표 렌탈 전환율 30일</div>
+      <span class="pill blue">12월 집행 예정</span>
+    </section>
+  </div>
+</main>
+
+<!-- 3차: 지표 정의 일원 관리 -->
+<main class="stage" data-stage="3">
+  <header class="top"><span class="badge s3">3차</span><b>지표 정의 관리</b><span class="sub">BI 도구 흐름 · 10월 순매출 실측</span></header>
+  <div class="g3">
+    <section class="card" id="t3-def">
+      <div class="lbl">📐 순매출 정의 (단일 정의)</div>
+      <pre>순매출 = 판매 − 할인 − 반품
+  주문일 기준 · 취소 · 반품 차감</pre>
+    </section>
+    <section class="card" id="t3-opt">
+      <div class="lbl">범위 옵션</div>
+      <label><input type="checkbox" id="opt-b2b" checked> B2B 모델 포함 <small>282,248,500원</small></label>
+      <label><input type="checkbox" id="opt-cnsm"> 소모품 · 홈스타일 포함 <small>242,152,900원</small></label>
+    </section>
+    <section class="card" id="t3-panels">
+      <div class="lbl">이 정의를 쓰는 패널</div>
+      <div class="kv"><span>합계 타일</span><b class="tot">2,901,488,100</b></div>
+      <div class="kv"><span>카테고리별 막대</span><b class="tot">2,901,488,100</b></div>
+      <div class="kv"><span>일별 순매출</span><b class="tot">2,901,488,100</b></div>
+      <div class="kv"><span>채널별 매출</span><b class="tot">2,901,488,100</b></div>
+    </section>
+    <section class="card" id="t3-reg">
+      <div class="lbl">🧪 변경 전 회귀 검증</div>
+      <div class="big">21 / 21</div><div class="m">정의 질문 통과</div>
+    </section>
+    <section class="card" id="t3-approve">
+      <div class="lbl">✅ 배포</div>
+      <div class="btns"><span class="btn pri">BA 리더 승인 · 배포</span></div>
+      <div class="m">정의 소유 · 변경 주체: BA</div>
+    </section>
+  </div>
+</main>
+
+<div id="spot" class="spot"></div>
+<div id="tip" class="tip">
+  <div class="tip-h"><span class="guide">🧑‍💻</span><span id="tip-step" class="step"></span><span id="tip-dots" class="dots"></span></div>
+  <div id="tip-title" class="tip-t"></div>
+  <div id="tip-body" class="tip-b"></div>
+  <div class="tip-f"><button id="prev">◀ 이전</button><button id="next" class="pri">다음 ▶</button></div>
+</div>
+<script src="tutorial.js"></script>
+</body>
+</html>
